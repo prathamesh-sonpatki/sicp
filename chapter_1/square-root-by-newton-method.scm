@@ -3,9 +3,6 @@
 ;; averaging guess and (number/guess). Repeat this untill guess is not
 ;; good enough
 
-(define (abs x)
-  (if (> x 0) x (- x)))
-
 (define (square x)
   (* x x))
 

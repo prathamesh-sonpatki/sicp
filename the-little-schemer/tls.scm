@@ -1,6 +1,6 @@
 ;; The Little Schemer uses these 3 functions extensively
 ;; I don't like to type them all the time
-;; load('tls.scm')
+;; (load "tls.scm")
 ;; Enjoy!
 
 (define atom?

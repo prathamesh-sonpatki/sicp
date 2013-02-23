@@ -45,3 +45,21 @@
 ;; list enclosing 0 S-expressions(Empty or null list)
 () ;; It's not atom because it is list
 (() () () ()) ;; Getting Error The object () is not applicable
+
+;; car
+
+;;                 The Law of Car                  ;;
+
+;; The primitive 'car' is defined only for non-empty lists
+
+(car '(a b c))
+; a becuase a if first atom of the list
+
+(car '(( a b c) x y z))
+; (a b c) because it is first S-expression of this non-empty list
+
+(car 'hotdog)
+; car doesn't apply to atom
+
+(car '())
+; car doesn't apply to empty list

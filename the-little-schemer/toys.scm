@@ -63,3 +63,34 @@
 
 (car '())
 ; car doesn't apply to empty list
+
+(car '(((hotdogs)) (and) (pickle) relish))
+; ((hotdogs))
+
+(car (car '(((hotdogs)) (and) (pickle) relish)))
+; (hotdogs)
+
+;; car
+
+;;                 The Law of Cdr                  ;;
+
+;; The primitive 'cdr' is defined only for non-empty lists
+;; The 'cdr' of any non-empty list is always another list
+
+(cdr '(a b c))
+; (b c) because (b c) is without (car (a b c))
+
+(cdr '((a b c) x y z))
+; (x y z)
+
+(cdr '(hamburger))
+; ()
+
+(cdr '((x) t r))
+; (t r)
+
+(cdr 'hotdogs)
+; cdr is not applicable to atoms
+
+(cdr ())
+; can't ask for the cdr of null list

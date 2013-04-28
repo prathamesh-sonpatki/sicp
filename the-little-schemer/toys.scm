@@ -106,3 +106,27 @@
 (cdr (car '(a (b (c)) d)))
 ; (cdr 'a)
 ; No answer as 'cdr' doesn't apply to atoms
+
+;; cons
+
+(cons 'peanut '(butter and jelly))
+; (peanut butter and jelly)
+; Because 'cons' adds the atom at the front of the list
+
+(cons '(banana and) '(peanut butter and jelly))
+; ((banana and) peanut butter and jelly)
+; Because 'cons' adds any S-expression at the front of the list
+
+(cons '((help) this) '(is very (hard) to learn))
+; (((help) this) is very (hard) to learn)
+
+;; cons takes two arguments.
+;; the first one is any S-expression;
+;; the second one is any list.
+
+(cons '(a b (c)) '())
+;; ((a b (c)))
+
+(cons 'a '())
+;; (a)
+

@@ -109,6 +109,11 @@
 
 ;; cons
 
+;;                 The Law of Cons                  ;;
+
+;; The primitive 'cons' taked two arguments. The second 
+;; argument to 'cons' must be a list. The result is a list.
+
 (cons 'peanut '(butter and jelly))
 ; (peanut butter and jelly)
 ; Because 'cons' adds the atom at the front of the list
@@ -143,3 +148,23 @@
 (cons 'a (cdr '((b) c d)))
 ;; (cons 'a '(c d))
 ;; (a c d)
+
+;; null?
+;;                 The Law of Null?                  ;;
+;; The primitive 'null?' is defined only for lists.
+
+(null? '())
+;; #t
+
+(null? (quote ()))
+;; #t
+
+(null? ())
+;; #t
+
+(null? '(a b c))
+;; #f
+
+(null? 'spagheti)
+;; Can't ask null? of an atom
+;; #f

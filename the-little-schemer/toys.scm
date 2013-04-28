@@ -75,7 +75,7 @@
 ;;                 The Law of Cdr                  ;;
 
 ;; The primitive 'cdr' is defined only for non-empty lists
-;; The 'cdr' of any non-empty list is always another list
+;; The 'cdr' of any non-empty list is always another *list*
 
 (cdr '(a b c))
 ; (b c) because (b c) is without (car (a b c))
@@ -94,3 +94,15 @@
 
 (cdr ())
 ; can't ask for the cdr of null list
+
+(car (cdr '((b) (x y) ((c)))))
+; (car ((x y) ((c))))
+; (x y)
+
+(cdr (cdr '((b) (x y) ((c)))))
+; (cdr '((x y) ((c))))
+; (((c)))
+
+(cdr (car '(a (b (c)) d)))
+; (cdr 'a)
+; No answer as 'cdr' doesn't apply to atoms

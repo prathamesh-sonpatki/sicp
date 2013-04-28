@@ -130,3 +130,16 @@
 (cons 'a '())
 ;; (a)
 
+(cons '(a b c) 'b)
+;; (( a b c) . d) ??
+
+(cons 'a 'b)
+;; (a . b) ??
+
+(cons 'a (car '((b) c d)))
+;; (cons 'a '(b))
+;; (a b)
+
+(cons 'a (cdr '((b) c d)))
+;; (cons 'a '(c d))
+;; (a c d)

@@ -199,3 +199,36 @@
 ;; (atom? (car '((low sweet) cherry oat)))
 ;; (atom? '(low sweet))
 ;; #f
+
+;; eq?
+
+;;                 The Law of Eq?                  ;;
+;; The primitive 'eq?' takes two arguments. Each must 
+;; be a non-numeric atom.
+
+(eq? 'Harry 'Harry)
+;; #t
+
+(eq? 'margarine 'butter)
+;; #f
+
+(eq? () '(strawberry))
+;; No answer as () and '(strawberry) are lists
+;; #f in practice
+
+(eq? 6 7)
+;; No answer as 6 and 7 are numbers
+;; #f in practice
+
+(eq? (car '(Mary had little lamb chop)) 'Mary)
+;; (eq? 'Mary 'Mary)
+;; #t
+
+(eq? (cdr '(soured milk)) 'milk)
+;; (eq? '(milk) 'milk)
+;; #f
+
+(eq? (car '(beans beans we need jelly beans)) (car (cdr '(beans beans we need jelly beans))))
+;; (eq? 'beans (car '(beans we need jelly beans)))
+;; (eq? 'beans 'beans)
+;; #t

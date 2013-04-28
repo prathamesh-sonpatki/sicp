@@ -23,7 +23,7 @@
 '(( x y) z)
 '(how are you doing so far)
 
-;; How many subexpressions are in the list?
+;; How many sub-expressions are in the list?
 
 '(how are you doing so far)
 
@@ -53,7 +53,7 @@
 ;; The primitive 'car' is defined only for non-empty lists
 
 (car '(a b c))
-; a becuase a if first atom of the list
+; a because a if first atom of the list
 
 (car '(( a b c) x y z))
 ; (a b c) because it is first S-expression of this non-empty list
@@ -111,7 +111,7 @@
 
 ;;                 The Law of Cons                  ;;
 
-;; The primitive 'cons' taked two arguments. The second 
+;; The primitive 'cons' takes two arguments. The second 
 ;; argument to 'cons' must be a list. The result is a list.
 
 (cons 'peanut '(butter and jelly))
@@ -150,6 +150,7 @@
 ;; (a c d)
 
 ;; null?
+
 ;;                 The Law of Null?                  ;;
 ;; The primitive 'null?' is defined only for lists.
 
@@ -167,4 +168,34 @@
 
 (null? 'spagheti)
 ;; Can't ask null? of an atom
+;; #f
+
+;;                 The Law of Atom?                  ;;
+;; The primitive 'atom?' is defined for any S-expression.
+
+(atom? 'Harry)
+;; #t
+
+(atom? '(Harry had heap of apples))
+;; #f
+
+(atom? (car '(Harry had heap of apples)))
+;; (atom? 'Harry)
+;; #t
+
+(atom? (cdr '(Harry had heap of apples)))
+;; (atom? '(had heap of apples))
+;; #f
+
+(atom? '(Harry))
+;; #f
+
+(atom? (car (cdr '(swing low sweet cherry oat))))
+;; (atom? (car '(low sweet cherry oat)))
+;; (atom? 'low)
+;; #t
+
+(atom? (car (cdr '(swing (low sweet) cherry oat))))
+;; (atom? (car '((low sweet) cherry oat)))
+;; (atom? '(low sweet))
 ;; #f

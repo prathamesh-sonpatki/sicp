@@ -1,5 +1,6 @@
-;; The Little Schemer uses these 3 functions extensively
+;; The Little Schemer defines these functions
 ;; I don't like to type them all the time
+;; Launch scheme from root folder of the project
 ;; (load "tls.scm")
 ;; Enjoy!
 

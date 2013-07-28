@@ -22,3 +22,12 @@
      ((null? l) #t)
      ((atom? (car l)) (lat? (cdr l)))
      (else #f))))
+
+(define member?
+  (lambda (l lat)
+    (cond
+     ((null? lat) #f)
+     (else (or
+            (eq? l (car lat))
+            (member? l (cdr lat))
+            )))))

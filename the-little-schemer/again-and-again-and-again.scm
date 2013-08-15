@@ -37,3 +37,24 @@
 ;; (or #f (null? '(atom)))
 ;; (or #f #f)
 ;; #f
+
+;; member?
+;; #t if a is member of list of atoms lat
+
+;; my version
+(define pps-member?
+  (lambda (a lat)
+     (cond
+      ((null? lat) #f)
+      ((eq? (car lat) a) #t)
+      (else (member? a (cdr lat))))))
+
+;; book version
+(define member?
+  (lambda (a lat)
+    (cond
+     ((null? lat) #f)
+     (else (or
+            (eq? (car lat) a)
+            (member? a (cdr lat))
+            )))))

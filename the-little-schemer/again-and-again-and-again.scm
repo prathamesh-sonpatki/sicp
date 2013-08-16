@@ -56,8 +56,7 @@
      ((null? lat) #f)
      (else (or
             (eq? (car lat) a)
-            (member? a (cdr lat))
-            )))))
+            (member? a (cdr lat)))))))
 
 ;; rember - remove a member
 ;; takes 2 args, atom and a list and creates a new list with first

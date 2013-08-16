@@ -58,3 +58,15 @@
             (eq? (car lat) a)
             (member? a (cdr lat))
             )))))
+
+;; rember - remove a member
+;; takes 2 args, atom and a list and creates a new list with first
+;; occurance of the atom removed
+
+(define rember
+  (lambda (a lat)
+    (cond
+     ((null? lat) '())
+     ((eq? a (car lat)) (cdr lat))
+     (else
+      (cons (car lat) (rember a (cdr lat)))))))

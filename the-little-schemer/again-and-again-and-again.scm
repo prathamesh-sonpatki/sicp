@@ -47,7 +47,7 @@
      (cond
       ((null? lat) #f)
       ((eq? (car lat) a) #t)
-      (else (member? a (cdr lat))))))
+      (else (pps-member? a (cdr lat))))))
 
 ;; book version
 (define member?
@@ -57,15 +57,3 @@
      (else (or
             (eq? (car lat) a)
             (member? a (cdr lat)))))))
-
-;; rember - remove a member
-;; takes 2 args, atom and a list and creates a new list with first
-;; occurance of the atom removed
-
-(define rember
-  (lambda (a lat)
-    (cond
-     ((null? lat) '())
-     ((eq? a (car lat)) (cdr lat))
-     (else
-      (cons (car lat) (rember a (cdr lat)))))))
